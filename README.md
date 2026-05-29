@@ -37,16 +37,18 @@
 
 ## 时序验证结果
 
+```
 Clock Summary:
-i_sys_clk_p 200.000 MHz (输入时钟)
-clk_out1_pll 50.000 MHz (外设时钟)
-clk_out2_pll 150.000 MHz (CPU 核心时钟)
+  i_sys_clk_p     200.000 MHz  (输入时钟)
+  clk_out1_pll     50.000 MHz  (外设时钟)
+  clk_out2_pll    150.000 MHz  (CPU 核心时钟)
 
 Timing Summary (150MHz):
-WNS(ns) TNS(ns) Failing Endpoints Total Endpoints
-0.513 0.000 0 4897
+  WNS(ns)    TNS(ns)  Failing Endpoints  Total Endpoints
+  0.513      0.000    0                  4897
 
 All user specified timing constraints are met.
+```
 
 ## 支持的指令（37 条）
 
@@ -119,80 +121,84 @@ All user specified timing constraints are met.
 
 ## 项目结构
 
+```
 JYD2025_Contest-rv32i55555/
-├── JYD2025_Contest-rv32i/ # Vivado 工程目录
-│ ├── digital_twin.xpr # Vivado 工程文件
-│ ├── digital_twin.srcs/
-│ │ ├── sources_1/
-│ │ │ ├── imports/new/ # 导入的 CPU 核心源代码
-│ │ │ │ ├── myCPU.sv # CPU 顶层模块（流水线互连 + 前递网络）
-│ │ │ │ ├── stage_IF.sv # 取指级（PC + NPC + IF/ID 流水线寄存器）
-│ │ │ │ ├── stage_ID.sv # 译码级（译码 + 分支判断 + 冒险检测 + 前递 MUX）
-│ │ │ │ ├── stage_EX.sv # 执行级（ALU + EX/MEM 流水线寄存器 + 前递寄存器化）
-│ │ │ │ ├── stage_MEM.sv # 访存级（存储器接口 + 结构冒险状态机 + Load 停顿）
-│ │ │ │ ├── stage_WB.sv # 写回级（写回数据 MUX）
-│ │ │ │ ├── PC.sv # 程序计数器
-│ │ │ │ ├── NPC.sv # 下一地址计算（顺序/分支/跳转）
-│ │ │ │ ├── ALU.sv # 算术逻辑单元（16 种操作 + 分支条件生成）
-│ │ │ │ ├── Control.sv # 主控制器（opcode → 控制信号）
-│ │ │ │ ├── ACTL.sv # ALU 控制（opcode + funct → ALUControl）
-│ │ │ │ ├── IMMGEN.sv # 立即数生成器（支持 I/S/B/U/J 五种格式）
-│ │ │ │ ├── RF.sv # 32×32 位寄存器堆（异步读、同步写）
-│ │ │ │ ├── Mask.sv # 加载数据掩码（LB/LH 符号扩展）
-│ │ │ │ ├── MUX2_1.sv # 2选1多路选择器
-│ │ │ │ ├── MUX4_1.sv # 4选1多路选择器
-│ │ │ │ └── defines.sv # 全局宏定义（总线宽度等）
-│ │ │ └── new/ # 系统级模块
-│ │ │ ├── top.sv # FPGA 顶层（PLL + UART + 外设控制器）
-│ │ │ ├── student_top.sv # 学生顶层（CPU + IROM + 外设桥 + 复位同步）
-│ │ │ ├── perip_bridge.sv # 外设桥（地址译码 + MMIO + CDC 同步）
-│ │ │ ├── uart.sv # UART 收发模块（9600 baud）
-│ │ │ ├── twin_controller.sv # 双向控制器（UART ↔ 虚拟外设交互）
-│ │ │ ├── dram_driver.sv # 数据存储器驱动
-│ │ │ ├── counter.sv # 计数器外设
-│ │ │ ├── display_seg.sv # 七段数码管驱动
-│ │ │ ├── seg7.sv # 7段译码器
-│ │ │ ├── TrapCtrl.sv # 陷阱控制（待实现）
-│ │ │ └── defines.sv # 系统级宏定义
-│ │ ├── sim_1/ # 仿真测试
-│ │ │ └── new/
-│ │ │ ├── tb_myCPU.sv # CPU 测试平台
-│ │ │ ├── tb_top.sv # 顶层测试平台
-│ │ │ └── tb_uart.sv # UART 测试平台
-│ │ ├── constrs_1/ # 约束文件
-│ │ │ └── new/
-│ │ │ └── digital_twin.xdc # 时序和引脚约束
-│ │ └── sources_1/ip/ # Xilinx IP 核
-│ │ ├── IROM/ # 指令存储器（Block RAM）
-│ │ ├── DRAM/ # 数据存储器（Block RAM）
-│ │ ├── DRAM_BRAM/ # 数据存储器备用
-│ │ ├── pll/ # PLL 时钟（200MHz → 150MHz + 50MHz）
-│ │ ├── pll_1/ # PLL 备用配置
-│ │ ├── counter_0/ # 计数器 IP
-│ │ └── counter_1/ # 计数器备用
-│ ├── DRAM.mif # 数据存储器初始化文件
-│ └── IROM.mif # 指令存储器初始化文件
-├── .gitignore # Git 忽略规则
-├── LICENSE # MIT 许可证
-└── README.md # 本文件
+├── JYD2025_Contest-rv32i/              # Vivado 工程目录
+│   ├── digital_twin.xpr                # Vivado 工程文件
+│   ├── digital_twin.srcs/
+│   │   ├── sources_1/
+│   │   │   ├── imports/new/            # 导入的 CPU 核心源代码
+│   │   │   │   ├── myCPU.sv            # CPU 顶层模块（流水线互连 + 前递网络）
+│   │   │   │   ├── stage_IF.sv         # 取指级（PC + NPC + IF/ID 流水线寄存器）
+│   │   │   │   ├── stage_ID.sv         # 译码级（译码 + 分支判断 + 冒险检测 + 前递 MUX）
+│   │   │   │   ├── stage_EX.sv         # 执行级（ALU + EX/MEM 流水线寄存器 + 前递寄存器化）
+│   │   │   │   ├── stage_MEM.sv        # 访存级（存储器接口 + 结构冒险状态机 + Load 停顿）
+│   │   │   │   ├── stage_WB.sv         # 写回级（写回数据 MUX）
+│   │   │   │   ├── PC.sv               # 程序计数器
+│   │   │   │   ├── NPC.sv              # 下一地址计算（顺序/分支/跳转）
+│   │   │   │   ├── ALU.sv              # 算术逻辑单元（16 种操作 + 分支条件生成）
+│   │   │   │   ├── Control.sv          # 主控制器（opcode → 控制信号）
+│   │   │   │   ├── ACTL.sv             # ALU 控制（opcode + funct → ALUControl）
+│   │   │   │   ├── IMMGEN.sv           # 立即数生成器（支持 I/S/B/U/J 五种格式）
+│   │   │   │   ├── RF.sv               # 32×32 位寄存器堆（异步读、同步写）
+│   │   │   │   ├── Mask.sv             # 加载数据掩码（LB/LH 符号扩展）
+│   │   │   │   ├── MUX2_1.sv           # 2选1多路选择器
+│   │   │   │   ├── MUX4_1.sv           # 4选1多路选择器
+│   │   │   │   └── defines.sv          # 全局宏定义（总线宽度等）
+│   │   │   └── new/                    # 系统级模块
+│   │   │       ├── top.sv              # FPGA 顶层（PLL + UART + 外设控制器）
+│   │   │       ├── student_top.sv      # 学生顶层（CPU + IROM + 外设桥 + 复位同步）
+│   │   │       ├── perip_bridge.sv     # 外设桥（地址译码 + MMIO + CDC 同步）
+│   │   │       ├── uart.sv             # UART 收发模块（9600 baud）
+│   │   │       ├── twin_controller.sv  # 双向控制器（UART ↔ 虚拟外设交互）
+│   │   │       ├── dram_driver.sv      # 数据存储器驱动
+│   │   │       ├── counter.sv          # 计数器外设
+│   │   │       ├── display_seg.sv      # 七段数码管驱动
+│   │   │       ├── seg7.sv             # 7段译码器
+│   │   │       ├── TrapCtrl.sv         # 陷阱控制（待实现）
+│   │   │       └── defines.sv          # 系统级宏定义
+│   │   ├── sim_1/                      # 仿真测试
+│   │   │   └── new/
+│   │   │       ├── tb_myCPU.sv         # CPU 测试平台
+│   │   │       ├── tb_top.sv           # 顶层测试平台
+│   │   │       └── tb_uart.sv          # UART 测试平台
+│   │   ├── constrs_1/                  # 约束文件
+│   │   │   └── new/
+│   │   │       └── digital_twin.xdc    # 时序和引脚约束
+│   │   └── sources_1/ip/               # Xilinx IP 核
+│   │       ├── IROM/                   # 指令存储器（Block RAM）
+│   │       ├── DRAM/                   # 数据存储器（Block RAM）
+│   │       ├── DRAM_BRAM/              # 数据存储器备用
+│   │       ├── pll/                    # PLL 时钟（200MHz → 150MHz + 50MHz）
+│   │       ├── pll_1/                  # PLL 备用配置
+│   │       ├── counter_0/              # 计数器 IP
+│   │       └── counter_1/              # 计数器备用
+│   ├── DRAM.mif                        # 数据存储器初始化文件
+│   └── IROM.mif                        # 指令存储器初始化文件
+├── .gitignore                          # Git 忽略规则
+├── LICENSE                             # MIT 许可证
+└── README.md                           # 本文件
+```
 
 ## 流水线架构
 
-┌─────────┐ ┌─────────┐ ┌─────────┐ ┌─────────┐ ┌─────────┐
-│ IF │───▶│ ID │───▶│ EX │───▶│ MEM │───▶│ WB │
-│ 取指级 │ │ 译码级 │ │ 执行级 │ │ 访存级 │ │ 写回级 │
-├─────────┤ ├─────────┤ ├─────────┤ ├─────────┤ ├─────────┤
-│ PC │ │ 译码 │ │ ALU │ │ 存储器 │ │ 写回MUX │
-│ NPC │ │ 立即数 │ │ ALU控制 │ │ 接口 │ │ │
-│ IROM接口 │ │ 寄存器堆 │ │ │ │ Mask │ │ │
-│ │ │ 控制器 │ │ │ │ │ │ │
-│ │ │ 冒险检测 │ │ │ │ 结构冒险 │ │ │
-│ │ │ 前递MUX │ │ │ │ 状态机 │ │ │
-└─────────┘ └─────────┘ └─────────┘ └─────────┘ └─────────┘
-▲ │
-│ 分支/跳转 │ 前递
-└───────────────┘ EX/MEM → ID
-MEM/WB → ID
+```
+┌─────────┐    ┌─────────┐    ┌─────────┐    ┌─────────┐    ┌─────────┐
+│   IF     │───▶│   ID     │───▶│   EX     │───▶│  MEM     │───▶│   WB     │
+│ 取指级   │    │ 译码级   │    │ 执行级   │    │ 访存级   │    │ 写回级   │
+├─────────┤    ├─────────┤    ├─────────┤    ├─────────┤    ├─────────┤
+│ PC       │    │ 译码     │    │ ALU      │    │ 存储器   │    │ 写回MUX  │
+│ NPC      │    │ 立即数   │    │ ALU控制  │    │ 接口     │    │          │
+│ IROM接口 │    │ 寄存器堆 │    │          │    │ Mask     │    │          │
+│          │    │ 控制器   │    │          │    │          │    │          │
+│          │    │ 冒险检测 │    │          │    │ 结构冒险 │    │          │
+│          │    │ 前递MUX  │    │          │    │ 状态机   │    │          │
+└─────────┘    └─────────┘    └─────────┘    └─────────┘    └─────────┘
+     ▲               │
+     │  分支/跳转     │ 前递
+     └───────────────┘  EX/MEM → ID
+                        MEM/WB → ID
+```
 
 ## 存储器映射
 
@@ -213,34 +219,44 @@ MEM/WB → ID
 
 ### 1. EX 级前递数据寄存器化
 
+```
 问题：EX ALU → ID 前递 MUX → ID 分支比较器 → IF NPC MUX 形成关键路径
 方案：ex_wdata 在 EX 级寄存器化，延迟 1 周期输出
 代价：EX→ID 的 RAW 冒险全部变为 stall（而非前递），由 EX/MEM 级前递补偿
+```
 
 ### 2. 外设地址提前驱动
 
+```
 问题：EX ALU → perip_bridge → BRAM 地址→数据 路径过长
 方案：非访存指令时，perip_addr 从 EX 级驱动（而非 MEM 级）
 效果：BRAM 获得 EX+MEM 两个周期的地址→数据往返时间
 保护：MEM 级有访存指令时，EX 级通过 mem_allow_in 停顿
+```
 
 ### 3. ALU 减法器按需使能
 
+```
 问题：32 位减法器的 8 级 CARRY4 链在非分支指令时无用
 方案：仅分支指令（ALUControl[3]=1）时计算 A-B，其余时固定为 0
 效果：从关键路径上消除无用的进位链
+```
 
 ### 4. 外设接口寄存器化
 
+```
 问题：EX ALU → perip_bridge → dram_driver → BRAM 的组合逻辑路径
 方案：student_top 中对 perip_* 信号统一寄存器化
 代价：访存延迟 +1 周期，由 stage_MEM 的 load_stall 补偿
+```
 
 ### 5. 跨时钟域同步
 
+```
 问题：外设信号（50MHz）与 CPU（150MHz）之间存在 CDC 违规
 方案：perip_bridge 中对 sw/key 信号使用 2-FF 同步器
 效果：修复 WNS=-0.228ns 的 CDC 违规
+```
 
 ## 运行仿真
 
@@ -251,13 +267,10 @@ MEM/WB → ID
 
 ### Vivado 仿真步骤
 
-```bash
-# 1. 打开 Vivado {#1-打开-vivado  data-source-line="516"}
-# 2. File → Open Project → 选择 JYD2025_Contest-rv32i/digital_twin.xpr {#2-file--open-project--选择-jyd2025_contest-rv32idigital_twinxpr  data-source-line="517"}
-# 3. 运行仿真 {#3-运行仿真  data-source-line="518"}
-# Flow → Run Simulation → Run Behavioral Simulation {#flow--run-simulation--run-behavioral-simulation  data-source-line="519"}
-# 4. 查看波形，验证指令执行正确性 {#4-查看波形验证指令执行正确性  data-source-line="520"}
-``` {data-source-line="521"}
+1. 打开 Vivado
+2. File → Open Project → 选择 `JYD2025_Contest-rv32i/digital_twin.xpr`
+3. 运行仿真：Flow → Run Simulation → Run Behavioral Simulation
+4. 查看波形，验证指令执行正确性
 
 ### 预期结果
 
