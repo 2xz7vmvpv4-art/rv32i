@@ -1,0 +1,72 @@
+Vivado Simulator v2023.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: E:/Xilinx/Vivado/2023.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L secureip --snapshot tb_myCPU_func_synth xil_defaultlib.tb_myCPU xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module unisims_ver.IBUF
+Compiling module unisims_ver.OBUF
+Compiling module unisims_ver.BUFG
+Compiling module unisims_ver.IBUFDS
+Compiling module unisims_ver.PLLE2_ADV(CLKFBOUT_MULT=9,CLKIN1...
+Compiling module xil_defaultlib.pll_clk_wiz
+Compiling module xil_defaultlib.pll
+Compiling module unisims_ver.LUT5
+Compiling module unisims_ver.LUT4
+Compiling module unisims_ver.LUT6
+Compiling module unisims_ver.x_lut3_mux8
+Compiling module unisims_ver.LUT3
+Compiling module unisims_ver.CARRY4
+Compiling module unisims_ver.MUXF7
+Compiling module xil_defaultlib.ALU
+Compiling module unisims_ver.x_lut2_mux4
+Compiling module unisims_ver.LUT2
+Compiling module unisims_ver.FDCE_default
+Compiling module unisims_ver.x_lut1_mux2
+Compiling module unisims_ver.LUT1
+Compiling module xil_defaultlib.stage_EX
+Compiling module xil_defaultlib.stage_ID
+Compiling module unisims_ver.FDPE_default
+Compiling module xil_defaultlib.PC
+Compiling module xil_defaultlib.stage_IF
+Compiling module xil_defaultlib.Mask
+Compiling module xil_defaultlib.stage_MEM
+Compiling module unisims_ver.MUXF8
+Compiling module xil_defaultlib.RF
+Compiling module xil_defaultlib.myCPU
+Compiling module unisims_ver.GND
+Compiling module xil_defaultlib.IROM
+Compiling module unisims_ver.FDRE_default
+Compiling module xil_defaultlib.counter
+Compiling module unisims_ver.RB36_INTERNAL_VLOG(RDADDR_COLLIS...
+Compiling module unisims_ver.RAMB36E1(INITP_00=256'b011000,IN...
+Compiling module unisims_ver.RB36_INTERNAL_VLOG(RDADDR_COLLIS...
+Compiling module unisims_ver.RAMB36E1(RDADDR_COLLISION_HWCONF...
+Compiling module unisims_ver.RB36_INTERNAL_VLOG(RDADDR_COLLIS...
+Compiling module unisims_ver.RAMB36E1(INITP_00=256'b010000,IN...
+Compiling module unisims_ver.RB36_INTERNAL_VLOG(RDADDR_COLLIS...
+Compiling module unisims_ver.RAMB36E1(INITP_00=256'b010010000...
+Compiling module unisims_ver.RB36_INTERNAL_VLOG(RAM_EXTENSION...
+Compiling module unisims_ver.RAMB36E1(INIT_00=256'b010000000,...
+Compiling module unisims_ver.RB36_INTERNAL_VLOG(RAM_EXTENSION...
+Compiling module unisims_ver.RAMB36E1(RAM_EXTENSION_A="UPPER"...
+Compiling module unisims_ver.RB36_INTERNAL_VLOG(RAM_EXTENSION...
+Compiling module unisims_ver.RAMB36E1(INIT_00=256'b010011000,...
+Compiling module unisims_ver.RB36_INTERNAL_VLOG(RAM_EXTENSION...
+Compiling module unisims_ver.RAMB36E1(INIT_00=256'b010010000,...
+Compiling module xil_defaultlib.DRAM_BRAM
+Compiling module xil_defaultlib.dram_driver
+Compiling module xil_defaultlib.display_seg
+Compiling module xil_defaultlib.perip_bridge
+Compiling module xil_defaultlib.student_top
+Compiling module xil_defaultlib.twin_controller
+Compiling module xil_defaultlib.uart
+Compiling module xil_defaultlib.top
+Compiling module xil_defaultlib.tb_myCPU
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_myCPU_func_synth

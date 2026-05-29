@@ -1,0 +1,2 @@
+DRAM_BRAM.v,verilog,xil_defaultlib,../../../../digital_twin.gen/sources_1/ip/DRAM_BRAM/sim/DRAM_BRAM.v,
+glbl.v,Verilog,xil_defaultlib,glbl.v

@@ -1,0 +1,31 @@
+#-----------------------------------------------------------
+# Vivado v2023.2 (64-bit)
+# SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
+# IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+# SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+# Start of session at: Sun May 17 00:45:38 2026
+# Process ID: 60108
+# Current directory: E:/JYD2025_Contest-rv32i55555/JYD2025_Contest-rv32i
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent56184 E:\JYD2025_Contest-rv32i55555\JYD2025_Contest-rv32i\digital_twin.xpr
+# Log file: E:/JYD2025_Contest-rv32i55555/JYD2025_Contest-rv32i/vivado.log
+# Journal file: E:/JYD2025_Contest-rv32i55555/JYD2025_Contest-rv32i\vivado.jou
+# Running On: o, OS: Windows, CPU Frequency: 3094 MHz, CPU Physical cores: 16, Host memory: 16849 MB
+#-----------------------------------------------------------
+start_gui
+open_project E:/JYD2025_Contest-rv32i55555/JYD2025_Contest-rv32i/digital_twin.xpr
+update_compile_order -fileset sources_1
+launch_simulation
+open_wave_config E:/JYD2025_Contest-rv32i55555/JYD2025_Contest-rv32i/digital_twin.srcs/sim_1/imports/JYD2025_Contest-rv32i-error/tb_uart_behav.wcfg
+open_wave_config E:/JYD2025_Contest-rv32i55555/JYD2025_Contest-rv32i/digital_twin.srcs/sim_1/imports/JYD2025_Contest-rv32i-error/tb_top_behav.wcfg
+open_wave_config E:/JYD2025_Contest-rv32i55555/JYD2025_Contest-rv32i/digital_twin.srcs/sim_1/imports/JYD2025_Contest-rv32i-error/tb_myCPU_behav.wcfg
+source tb_myCPU.tcl
+close_sim
+launch_simulation
+launch_simulation
+open_wave_config E:/JYD2025_Contest-rv32i55555/JYD2025_Contest-rv32i/digital_twin.srcs/sim_1/imports/JYD2025_Contest-rv32i-error/tb_uart_behav.wcfg
+open_wave_config E:/JYD2025_Contest-rv32i55555/JYD2025_Contest-rv32i/digital_twin.srcs/sim_1/imports/JYD2025_Contest-rv32i-error/tb_top_behav.wcfg
+open_wave_config E:/JYD2025_Contest-rv32i55555/JYD2025_Contest-rv32i/digital_twin.srcs/sim_1/imports/JYD2025_Contest-rv32i-error/tb_myCPU_behav.wcfg
+source tb_myCPU.tcl
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+close_sim

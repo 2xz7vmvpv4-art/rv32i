@@ -1,0 +1,43 @@
+Time resolution is 1 ps
+WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module tb_myCPU.uut.student_top_inst.bridge_inst.dram_driver_inst.Mem_DRAM.inst.\native_mem_module.blk_mem_gen_v8_4_7_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+[1] PC=80000000 x05=zzzzzzzz
+[2] PC=80000004 x05=zzzzzzzz
+[3] PC=80000004 x05=zzzzzzzz
+[4] PC=80000010 x06=zzzzzzzz
+[5] PC=80000014 x06=zzzzzzzz
+[6] PC=80000014 x06=zzzzzzzz
+[7] PC=8000001c x09=00000000
+[8] PC=8000001c x09=00000000
+[9] PC=80000020 x07=zzzzzzzz
+[10] PC=80000024 x07=zzzzzzzz
+[11] PC=80000024 x07=zzzzzzzz
+[12] PC=8000002c x18=00000000
+[13] PC=8000002c x18=00000000
+[14] PC=80000030 x28=zzzzzzzz
+[15] PC=80000034 x28=zzzzzzzz
+[16] PC=80000034 x28=zzzzzzzz
+[17] PC=8000003c x19=00000000
+[18] PC=8000003c x19=00000000
+[19] PC=80000040 x20=00000000
+[20] PC=80000044 x20=00000000
+[21] PC=80000048 x21=00000000
+[22] PC=80000048 x21=00000000
+[23] PC=8000004c x21=00000000
+[24] PC=80000050 x29=zzzzzzzz
+[25] PC=80000050 x29=zzzzzzzz
+[26] PC=80000058 x22=00000000
+[27] PC=80000058 x22=00000000
+[28] PC=8000005c x22=00000000
+[29] PC=80000060 x30=zzzzzzzz
+[30] PC=80000064 x30=zzzzzzzz
+[31] PC=8000006c x23=00000000
+[32] PC=80000070 x31=00000000
+[33] PC=80000074 x24=zzzzzzzz
+[34] PC=80000078 x25=zzzzzzzz
+[35] PC=8000007c x25=zzzzzzzz
+[36] PC=80000084 x26=zzzzzzzz
+[37] PC=80000084 x26=zzzzzzzz
+[38] PC=80000088 x26=zzzzzzzz
