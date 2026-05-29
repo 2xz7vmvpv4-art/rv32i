@@ -1,0 +1,88 @@
+# ============================================
+# Xilinx Vivado 工程 .gitignore
+# ============================================
+
+# Vivado 工程文件（可重新生成）
+*.xpr
+*.runs/
+*.cache/
+*.hw/
+*.ip_user_files/
+*.gen/
+*.sim/
+*.str/
+*.debug/
+.Xil/
+*.jou
+*.log
+*.backup.jou
+*.backup.log
+vivado_*.backup.*
+
+# 综合/实现中间文件
+*.dcp
+*.bit
+*.ltx
+*.mmi
+*.prm
+*.rbt
+*.bin
+
+# 仿真文件
+*.wlf
+*.vcd
+*.fsdb
+*.vpd
+*.shm/
+*.trn
+*.dsn
+simv
+simv.daidir/
+csrc/
+ucli.key
+work/
+DVEfiles/
+transcript
+modelsim.ini
+
+# 编译中间文件
+*.o
+*.a
+*.so
+*.dylib
+*.exe
+
+# IP 核生成的文件（只保留 .xci 配置文件）
+**/ip/*/gen/
+**/ip/*/sim/
+**/ip/*/*.v
+**/ip/*/*.veo
+**/ip/*/*.xco
+**/ip/*/doc/
+**/ip/*/*.xml
+**/ip/*/*.html
+
+# 日志和报告
+*.rpt
+*.history
+
+# Java 错误日志
+hs_err_pid*.log
+hs_err_pid*.dmp
+
+# 时序报告（可选：如果你想保留，注释掉下面两行）
+# timing_summary.txt
+# timing_violation_report.txt
+
+# 系统文件
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# 编辑器配置
+.vscode/
+.idea/
+*.code-workspace
+*.swp
+*.swo
+*~
